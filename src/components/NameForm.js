@@ -4,7 +4,7 @@ function NameForm(props) {
 //when editing, this will show the original value, and easier for only add-on
 const [input, setInput] = useState(props.edit ? props.edit.value : '');
 
-//focus on text box for both add and update 
+//focus on text box for both ,add and update 
 const inputRef = useRef(null)
 useEffect (() => {
     inputRef.current.focus()
