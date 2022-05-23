@@ -4,10 +4,11 @@ import Name from './Name';
 
 function NameList() {
 
+    //new names (a state variable), and setNames function to update this "names" value
     const [names, setNames] = useState([]);
 
     const addName = name => {
-        //make sure if user enter name, and check space
+        //make sure if user enter text or not, and check space
         if (!name.text || /^\s*$/.test(name.text)){
             return;
         }
@@ -21,7 +22,7 @@ function NameList() {
     }
 
     const updateName = (nameId, newValue) => {
-        //make sure if user enter name for change icon, and check space
+        //make sure if user enter text or not when update(edit), and check space
         if (!newValue.text || /^\s*$/.test(newValue.text)){
             return;
         }
@@ -32,7 +33,7 @@ function NameList() {
 
     const removeName = id => {
         const removeArr = [...names].filter(name => name.id !== id)
-
+        //console.log(...names);
         setNames(removeArr);
     }
 
